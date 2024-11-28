@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { Amplify } from 'aws-amplify';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+Amplify.configure({
+
+  Auth:{
+    Cognito:{
+      userPoolId:"us-east-1_NGG4oOk01",
+      userPoolClientId:"5nt3ur9ipbuvtkh9uedih83gjj",
+    }
+  }
+})
+
 root.render(
   <React.StrictMode>
     <App />
