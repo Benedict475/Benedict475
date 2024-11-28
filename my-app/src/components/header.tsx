@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
     return(
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+<nav className="navbar" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <a className="navbar-item" href="https://bulma.io">
       <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,12 +24,10 @@ export default function Header() {
 
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-start">
-      <a className="navbar-item">
-        Home
-      </a>
+    <Link to='/' className='navbar-item'>Home</Link>
 
       <a className="navbar-item">
-        Documentation
+        Movies
       </a>
 
       <div className="navbar-item has-dropdown is-hoverable">
@@ -37,9 +36,7 @@ export default function Header() {
         </a>
 
         <div className="navbar-dropdown">
-          <a className="navbar-item">
-            About
-          </a>
+        <Link to='/movies' className='navbar-item'>Movie</Link>
           <a className="navbar-item is-selected">
             Jobs
           </a>
