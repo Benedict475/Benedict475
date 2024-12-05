@@ -1,5 +1,5 @@
 import http from '../Http';
-import {Item} from '../types/Item';
+import {Item} from '../types/Movie';
 
 const getAll = async() => {
     return http.get<Array<Item>>("/items");

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ItemService from "../services/Itemservice";
-import { Item } from "../types/Item";
+import ItemService from "../services/Movieservice";
+import { Item } from "../types/Movie";
 import { Link } from "react-router-dom";
 
 export default function Items() {
