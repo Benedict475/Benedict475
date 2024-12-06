@@ -1,7 +1,13 @@
-export type Item = {
+export type movie = {
 
     id: string,
-    name:string,
-    price:string
+    Moviename:string,
+    Description:string,
+    Starring:string,
+    Director:string,
+    Writers:string,
+    Year:number
+    image:string
+
 }
 

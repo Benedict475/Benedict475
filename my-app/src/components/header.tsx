@@ -25,11 +25,7 @@ export default function Header() {
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-start">
     <Link to='/' className='navbar-item'>Home</Link>
-
-      <a className="navbar-item">
-        Movies
-      </a>
-
+    <Link to='/movies' className='navbar-item'>Movies</Link>
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link">
           More

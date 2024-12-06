@@ -1,21 +1,20 @@
 import http from '../Http';
-import {Item} from '../types/Movie';
+import {movie} from '../types/Movie';
 
 const getAll = async() => {
-    return http.get<Array<Item>>("/items");
+    return http.get<Array<movie>>("/movie");
 }
 
     const get = async(id: string) => {
-        return http.get<Item>(`/items/{id}`);
+        return http.get<movie>(`/movie/{id}`);
 }
 
 	const remove = async(id:string) => {
-    	
-    	    return http.delete(`/items/${id}`)
+    	 return http.delete(`/movie/${id}`)
     	}
     
 
-const ItemService = {
+const MovieService = {
 
     getAll,
     get,
@@ -23,5 +22,5 @@ const ItemService = {
     
 }
 
-export default ItemService;
+export default MovieService;
 
