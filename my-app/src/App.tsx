@@ -7,6 +7,7 @@ import Home from './components/home';
 import About from './components/about';
 import { Authenticator } from '@aws-amplify/ui-react';
 import Movies from './components/movies';
+import Tvshows from './components/tvshows';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/About' element={<About/>}/>
         <Route path='/Movies' element={<Movies/>}/>
+        <Route path='/Tvshows' element={<Tvshows/>}/>
       </Routes>
       <Footer />
       </Authenticator>
