@@ -26,8 +26,8 @@ export default function Tvshow() {
         <div className="container is-fluid">
             <section className="section">
                 <h1 className="title">Tvshow Catalogue</h1>
-            </section>
-            <div className="columns is-multiline">
+           
+                <div className="columns is-multiline">
                 {
                     tvshow.map((tvshow) => ( // Updated to map over the correct state
                         <div className="column" key={tvshow.tvid}>
@@ -53,7 +53,8 @@ export default function Tvshow() {
                         </div>
                     ))
                 }
-            </div>
+                </div>
+            </section>
         </div>
     );
 }
