@@ -10,51 +10,49 @@ import { Link, useParams } from "react-router-dom";
 export default function MovieVideo() {
 
 
-    const [movie, setmovie] = useState<movie>();
+  const [movie, setmovie] = useState<movie>();
 
-    const {id} = useParams();
-
-
-    const getmovie = (id: string) => {
+  const { id } = useParams();
+  const getmovie = (id: string) => {
 
 
-        MovieServices.get(id)
+    MovieServices.get(id)
 
-            .then((response: any) => {
+      .then((response: any) => {
 
-                setmovie(response.data);
+        setmovie(response.data);
 
-                console.log(movie);
+        console.log(movie);
 
 
-            })
+      })
 
-            .catch((e: Error) => {
+      .catch((e: Error) => {
 
-                console.log(e);
+        console.log(e);
 
-                alert(e.message);
+        alert(e.message);
 
-            })
+      })
+
+  }
+
+
+  useEffect(() => {
+
+    if (id) {
+
+      getmovie(id);
 
     }
 
 
-    useEffect(() => {
 
-        if(id){
+  }, [id]);
 
-            getmovie(id);
+  return (
 
-        }
-
-        
-
-    }, [id]);
-
-    return (
-
-      <div className="section">
+    <div className="section">
 
       <div className="container">
 
@@ -67,7 +65,7 @@ export default function MovieVideo() {
             <p className="subtitle">{movie.Genres}</p>
 
 
-            
+
 
             <div className="content">
 
@@ -77,30 +75,30 @@ export default function MovieVideo() {
 
             <div className="video-container">
 
-            {movie.Media && (
+              {movie.Media && (
 
-  <iframe
+                <iframe
 
-    width="100%"
+                  width="100%"
 
-    height="500px"
+                  height="500px"
 
-    src={movie.Media.startsWith('https://www.youtube.com/embed/') ? movie.Media : `https://www.youtube.com/embed/${movie.Media.split('v=')[1]?.split('&')[0]}`}
+                  src={movie.Media.startsWith('https://www.youtube.com/embed/') ? movie.Media : `https://www.youtube.com/embed/${movie.Media.split('v=')[1]?.split('&')[0]}`}
 
-    title={movie.Moviename}
+                  title={movie.Moviename}
 
-    frameBorder="0"
+                  frameBorder="0"
 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-    allowFullScreen
+                  allowFullScreen
 
-  ></iframe>
+                ></iframe>
 
-)}
+              )}
 
 
-              
+
 
             </div>
 
@@ -116,9 +114,9 @@ export default function MovieVideo() {
 
     </div>
 
-    
 
 
-    );
+
+  );
 
 } 

@@ -6,7 +6,7 @@ const getAll = async() => {
 }
 
     const get = async(id: string) => {
-        return http.get<movie>(`/movie/{id}`);
+        return http.get<movie>(`/movie/${id}`);
 }
 
 	const remove = async(id:string) => {

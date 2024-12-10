@@ -12,11 +12,11 @@ export default function Movie() {
 
 
 
-const deleteMovies =(id:string) => {
+const deletemovies =(id:string) => {
     Movieservice.remove(id)
     .then((response:any) => {
         alert(response.data);
-        getMovie();
+        getmovie();
     })
     .catch((e:Error) => {
         console.log(e);
@@ -24,12 +24,12 @@ const deleteMovies =(id:string) => {
     })
 
 }
-    const [movie, setMovie] = useState<MovieType[]>([]);
+    const [movie, setmovie] = useState<MovieType[]>([]);
 
-    const getMovie = () => {
+    const getmovie = () => {
         MovieService.getAll()
             .then((response: any) => {
-                setMovie(response.data); // Correct setter
+                setmovie(response.data); // Correct setter
                 console.log(response.data); // Log fetched data
             })
             .catch((e: Error) => {
@@ -39,7 +39,7 @@ const deleteMovies =(id:string) => {
     };
 
     useEffect(() => {
-        getMovie();
+        getmovie();
     }, []);
 
     return (
@@ -68,8 +68,8 @@ const deleteMovies =(id:string) => {
                                     <p className="content">{movie.Media}</p>
                                 </div>
                                 <div className="card-footer">
-                                    <Link className="button is-rounded is-danger" to={`/movie/${movie.id}`}>View Movie</Link>
-                                     <Link className="button is-rounded is-danger" onClick={() => { deleteMovies(movie.id); } } to={""}>Delete Movie</Link>
+                                    <Link className="button is-rounded is-danger" to={`/movies/${movie.id}`}>View Movie</Link>
+                                     <Link className="button is-rounded is-danger" onClick={() => { deletemovies(movie.id); } } to={""}>Delete Movie</Link>
                                 </div>
                             </div>
                         </div>
