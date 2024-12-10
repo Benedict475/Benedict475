@@ -2,8 +2,28 @@ import React, { useEffect, useState } from "react";
 import MovieService from "../services/Movieservice";
 import { movie as MovieType } from "../types/Movie";
 import { Link } from "react-router-dom";
+import Movieservice from "../services/Movieservice";
 
 export default function Movie() {
+
+
+
+
+
+
+
+const deleteMovies =(id:string) => {
+    Movieservice.remove(id)
+    .then((response:any) => {
+        alert(response.data);
+        getMovie();
+    })
+    .catch((e:Error) => {
+        console.log(e);
+        alert(e.message);
+    })
+
+}
     const [movie, setMovie] = useState<MovieType[]>([]);
 
     const getMovie = () => {
@@ -48,6 +68,7 @@ export default function Movie() {
                                 </div>
                                 <div className="card-footer">
                                     <Link className="button is-rounded is-danger" to={`/movie/${movie.id}`}>View Movie</Link>
+                                     <Link className="button is-rounded is-danger" onClick={() => { deleteMovies(movie.id); } } to={""}>Delete Movie</Link>
                                 </div>
                             </div>
                         </div>
