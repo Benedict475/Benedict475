@@ -8,6 +8,8 @@ export type movie = {
     Writers:string,
     Year:number
     image:string
+    Genres:string
+    Media:string
 
 }
 

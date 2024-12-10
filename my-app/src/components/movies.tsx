@@ -65,6 +65,7 @@ const deleteMovies =(id:string) => {
                                     <p className="content">{movie.Year}</p>
                                     <p className="content">{movie.Starring}</p>
                                     <p className="content">{movie.Writers}</p>
+                                    <p className="content">{movie.Media}</p>
                                 </div>
                                 <div className="card-footer">
                                     <Link className="button is-rounded is-danger" to={`/movie/${movie.id}`}>View Movie</Link>

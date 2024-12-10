@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import MovieServices from "../services/MovieServices";
+import MovieServices from "../services/Movieservice";
 
 import { movie } from "../types/Movie";
 
@@ -64,7 +64,7 @@ export default function MovieVideo() {
 
             <h1 className="title">{movie.Moviename}</h1>
 
-            <p className="subtitle">{movie.genres}</p>
+            <p className="subtitle">{movie.Genres}</p>
 
 
             
@@ -77,7 +77,7 @@ export default function MovieVideo() {
 
             <div className="video-container">
 
-            {movie.Mfile && (
+            {movie.Media && (
 
   <iframe
 
@@ -85,7 +85,7 @@ export default function MovieVideo() {
 
     height="500px"
 
-    src={movie.Mfile.startsWith('https://www.youtube.com/embed/') ? movie.Mfile : `https://www.youtube.com/embed/${movie.Mfile.split('v=')[1]?.split('&')[0]}`}
+    src={movie.Media.startsWith('https://www.youtube.com/embed/') ? movie.Media : `https://www.youtube.com/embed/${movie.Media.split('v=')[1]?.split('&')[0]}`}
 
     title={movie.Moviename}
 

@@ -8,6 +8,7 @@ import About from './components/about';
 import { Authenticator } from '@aws-amplify/ui-react';
 import Movies from './components/movies';
 import Tvshows from './components/tvshows';
+import Moviepage from './components/moviepage';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path='/About' element={<About/>}/>
         <Route path='/Movies' element={<Movies/>}/>
         <Route path='/Tvshows' element={<Tvshows/>}/>
+        <Route path='/Movies:id' element={<Moviepage/>}/>
+        
       </Routes>
       <Footer />
       </Authenticator>
