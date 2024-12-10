@@ -1,5 +1,5 @@
 export type tvshow = {
-    
+ // Declaring Attributes
 tvid: string,
 Tvshowname:string,
 Description:string,

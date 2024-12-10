@@ -1,5 +1,5 @@
 export type movie = {
-
+// Declaring Attributes
     id: string,
     Moviename:string,
     Description:string,
